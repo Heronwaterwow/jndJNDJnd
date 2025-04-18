@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn on ETH</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            position: relative;
+        }
+
+        .back-button, .info-button {
+            background: none;
+            border: none;
+            color: #8c8c8c;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .back-button:hover, .info-button:hover {
+            color: #ffffff;
+        }
+
+        .header-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            padding: 0 16px 16px;
+            color: #8c8c8c;
+            font-size: 14px;
+        }
+
+        .disclaimer a {
+            color: #8c8c8c;
+            text-decoration: underline;
+        }
+
+        /* Info Section */
+        .section-title {
+            padding: 16px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .info-card {
+            margin: 0 16px;
+            background-color: #1e1e1e;
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #8c8c8c;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-value {
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .eth-logo {
+            width: 20px;
+            height: 20px;
+            margin-right: 4px;
+        }
+
+        .info-icon {
+            width: 16px;
+            height: 16px;
+            margin-left: 8px;
+            opacity: 0.6;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            margin-top: 24px;
+        }
+
+        .portfolio-card {
+            margin: 0 16px;
+            background-color: #1e1e1e;
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .portfolio-label {
+            color: #8c8c8c;
+            font-size: 16px;
+        }
+
+        .portfolio-value {
+            font-size: 24px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .usd-value {
+            background-color: #2a2a2a;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #8c8c8c;
+        }
+
+        .stats-container {
+            display: flex;
+            margin: 16px 16px 0;
+            gap: 16px;
+        }
+
+        .stat-card {
+            flex: 1;
+            background-color: #1e1e1e;
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .stat-label {
+            color: #8c8c8c;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Stake Button */
+        .stake-button {
+            margin: 32px 16px;
+            background: none;
+            border: none;
+            color: #00c853;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .stake-button:hover {
+            color: #00e676;
+        }
+
+        .arrow-icon {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <button class="back-button" aria-label="Go back">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="header-title">Earn on ETH</h1>
+            <button class="info-button" aria-label="Information">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            APRs displayed are indicative and not guaranteed and may vary over time. 
+            <a href="#" id="learn-more">Learn more about asset risks.</a>
+        </div>
+
+        <!-- Info Section -->
+        <h2 class="section-title">Info</h2>
+        <div class="info-card">
+            <div class="info-row">
+                <div class="info-label">Available</div>
+                <div class="info-value">0 ETH</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">APR</div>
+                <div class="info-value">3,22%</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Should be greater than</div>
+                <div class="info-value">
+                    <svg class="eth-logo" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3L9.9 3.35V12.7L10 12.8L14.4 10.25L10 3Z" fill="#343434"/>
+                        <path d="M10 3L5.6 10.25L10 12.8V8.25V3Z" fill="#8C8C8C"/>
+                        <path d="M10 13.65L9.95 13.7V17L10 17.15L14.4 11.1L10 13.65Z" fill="#3C3C3B"/>
+                        <path d="M10 17.15V13.65L5.6 11.1L10 17.15Z" fill="#8C8C8C"/>
+                        <path d="M10 12.8L14.4 10.25L10 8.25V12.8Z" fill="#141414"/>
+                        <path d="M5.6 10.25L10 12.8V8.25L5.6 10.25Z" fill="#393939"/>
+                    </svg>
+                    0,025 ETH
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">
+                    Lock time
+                    <svg class="info-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="info-value">~4 days</div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <h2 class="section-title summary-section">Summary</h2>
+        <div class="portfolio-card">
+            <div class="portfolio-label">Portfolio value</div>
+            <div class="portfolio-value">
+                <span>$0</span>
+                <span class="usd-value">$0.00</span>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-label">Staked</div>
+                <div class="stat-value">0 ETH</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Earned</div>
+                <div class="stat-value">0 ETH</div>
+            </div>
+        </div>
+
+        <!-- Stake Button -->
+        <button class="stake-button" id="stake-button">
+            <span>Stake</span>
+            <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Button click effects
+            const buttons = document.querySelectorAll('.back-button, .info-button, .stake-button');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Add a subtle animation or effect
+                    this.style.opacity = '0.7';
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 150);
+                    
+                    // For demo purposes, log which button was clicked
+                    if (this.classList.contains('back-button')) {
+                        console.log('Back button clicked');
+                        // In a real app, this would navigate back
+                    } else if (this.classList.contains('info-button')) {
+                        console.log('Info button clicked');
+                        // In a real app, this would show more information
+                        alert('This would show more information about earning on ETH');
+                    } else if (this.classList.contains('stake-button')) {
+                        console.log('Stake button clicked');
+                        // In a real app, this would navigate to staking page
+                        alert('This would navigate to the ETH staking page');
+                    }
+                });
+            });
+            
+            // Learn more link
+            const learnMoreLink = document.getElementById('learn-more');
+            learnMoreLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Learn more clicked');
+                // In a real app, this would navigate to risk information
+                alert('This would show more information about asset risks');
+            });
+            
+            // Info icon hover effect
+            const infoIcons = document.querySelectorAll('.info-icon');
+            infoIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    // Show tooltip or information
+                    console.log('Info icon hovered');
+                    // In a real app, this would show a tooltip
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    // Hide tooltip or information
+                    console.log('Info icon unhovered');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
